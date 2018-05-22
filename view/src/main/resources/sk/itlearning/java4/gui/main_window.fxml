@@ -8,18 +8,17 @@
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.VBox?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<VBox xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TabPane prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane tabClosingPolicy="UNAVAILABLE">
         <tabs>
-          <Tab text="Books">
+          <Tab id="tabBooks" text="Books">
             <content>
-                  <VBox prefHeight="369.0" prefWidth="600.0">
+                  <VBox>
                      <children>
-                        <TableView prefHeight="365.0" prefWidth="600.0">
+                        <TableView id="tableBooks" prefHeight="365.0" prefWidth="600.0">
                           <columns>
-                            <TableColumn prefWidth="75.0" text="Author" />
+                            <TableColumn id="celAuthor" prefWidth="75.0" text="Author" />
                             <TableColumn prefWidth="75.0" text="Title" />
                               <TableColumn prefWidth="75.0" text="Genre" />
                               <TableColumn prefWidth="75.0" text="Price" />
@@ -31,17 +30,17 @@
                         </TableView>
                         <ToolBar prefHeight="0.0" prefWidth="600.0">
                           <items>
-                            <Button mnemonicParsing="false" text="Import" />
-                              <Button mnemonicParsing="false" text="Export" />
-                              <Button mnemonicParsing="false" text="Add" />
-                              <Button mnemonicParsing="false" text="Edit" />
+                            <Button id="btnLoad" fx:id="btnLoad" mnemonicParsing="false" onAction="#onBtnLoad" text="Load" />
+                              <Button id="btnExport" fx:id="btnExport" mnemonicParsing="false" onAction="#onBtnExport" text="Export" />
+                              <Button id="btnAdd" fx:id="btnAdd" mnemonicParsing="false" onAction="#onBtnAdd" text="Add" />
+                              <Button id="btnEdit" fx:id="btnEdit" mnemonicParsing="false" onAction="#onBtnEdit" text="Edit" />
                           </items>
                         </ToolBar>
                      </children>
                   </VBox>
             </content>
           </Tab>
-          <Tab text="Statistics">
+          <Tab id="tabStatistics" text="Statistics">
             <content>
                   <VBox />
             </content>
