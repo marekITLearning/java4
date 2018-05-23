@@ -4,7 +4,7 @@ public class Bentley implements Vehicle {
 
 	@Override
 	public void draw() {
-
+		System.out.println("Bentley");
 	}
 
 }

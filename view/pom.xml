@@ -16,4 +16,11 @@
 		
 	<name>java4 view</name>
 	
+	<dependencies>
+		<dependency>
+			<groupId>sk.itlearning.java4</groupId>
+			<artifactId>controller</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
 </project>

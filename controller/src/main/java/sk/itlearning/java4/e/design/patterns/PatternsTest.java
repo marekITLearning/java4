@@ -6,6 +6,9 @@ import java.util.List;
 import sk.itlearning.java4.e.pattern.factory.Vehicle;
 import sk.itlearning.java4.e.pattern.factory.VehicleFactory;
 import sk.itlearning.java4.e.pattern.factory.Vehicles;
+import sk.itlearning.java4.e.pattern.mvc.Student;
+import sk.itlearning.java4.e.pattern.mvc.StudentController;
+import sk.itlearning.java4.e.pattern.mvc.StudentView;
 import sk.itlearning.java4.e.pattern.singleton.Singleton;
 
 /**
@@ -56,7 +59,9 @@ public class PatternsTest {
 
 	public static void main(String[] args) {
 
-		// Adapter
+		// Singleton
+		Singleton singleObject = Singleton.getInstance();
+		singleObject.showMessage();
 
 		// Factory
 		VehicleFactory factory = new VehicleFactory();
@@ -68,13 +73,30 @@ public class PatternsTest {
 
 		vehicleList.forEach(v -> v.draw());
 
-		// MVC (Model View Controller)
-
-		// Proxy
-
-		// Singleton
-		Singleton singleObject = Singleton.getInstance();
-		singleObject.showMessage();
+		/* 
+		 * MVC (Model View Controller)
+		 * 
+		 * Model represents an object or JAVA POJO carrying data. 
+		 * It can also have logic to update controller if its data changes.
+		 * 
+		 * View represents the visualization of the data that model contains.
+		 * 
+		 * Controller acts on both model and view. 
+		 * It controls the data flow into model object and updates the view whenever data changes. 
+		 * It keeps view and model separate.
+		 */
+		Student model = retriveStudentFromDatabase();
+		StudentView view = new StudentView();
+		StudentController controller = new StudentController(model, view);
+		controller.updateView();
+		controller.setStudentName("John");
+		controller.updateView();
 	}
 
+	private static Student retriveStudentFromDatabase() {
+		Student student = new Student();
+		student.setName("Robert");
+		student.setRollNo("10");
+		return student;
+	}
 }
