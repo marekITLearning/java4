@@ -10,7 +10,7 @@ public class FilterPredicate {
 
 		List<String> lines = F2.getBookLines();
 	
-		long count = lines.stream().filter(l -> l.contains("</book>")).count();
+		long count = lines.stream().filter(p -> p.contains("</book>")).count();
 		
 		System.out.println(count);
 

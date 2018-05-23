@@ -1,0 +1,1 @@
+mvn archetype:generate -DgroupId=sk.itlearning.java4 -DartifactId=webprj -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
