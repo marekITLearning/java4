@@ -79,10 +79,10 @@ h1.login-title {
 
 <body>
 
-<form class="login">
+<form class="login" action="/appjava4/" method="get">
     <h1 class="login-title">%$Login$%</h1>
-    <input type="text" class="login-input" placeholder="%$User Name$%" autofocus>
-    <input type="password" class="login-input" placeholder="%$Password$%">
+    <input type="text" class="login-input" placeholder="%$User Name$%" autofocus name="user">
+    <input type="password" class="login-input" placeholder="%$Password$%" name="password">
     <input type="submit" value="%$Submit$%" class="login-button">
   <p class="login-lost"><a href="">%$Lost Password$%</a></p>
   </form>

@@ -16,15 +16,30 @@ public class Login extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		InputStream is1 = Login.class.getResourceAsStream("login.html");
-
-		InputStream is2 = getServletContext().getResourceAsStream("/WEB-INF/classes/sk/itlearning/java4/webprj/login/login.html");
-
-		String html = IOUtils.toString(is1, StandardCharsets.UTF_8.name());
+		String user = req.getParameter("user");
+		String password = req.getParameter("password");
 		
-		html = Dictionary.localize(html);
+		if (user != null && !user.isEmpty() && password != null && !password.isEmpty()) {
+			InputStream is1 = Login.class.getResourceAsStream("not_authorized.html");
+			resp.getWriter().append(IOUtils.toString(is1, StandardCharsets.UTF_8.name()));
+			return;
+		} else {
+			InputStream is1 = Login.class.getResourceAsStream("login.html");
+	
+			InputStream is2 = getServletContext().getResourceAsStream("/WEB-INF/classes/sk/itlearning/java4/webprj/login/login.html");
+	
+			String html = IOUtils.toString(is1, StandardCharsets.UTF_8.name());
+			
+			html = Dictionary.localize(html);
+			
+			resp.getWriter().append(html);
+		}
 		
-		resp.getWriter().append(html);
-
 	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		super.doPost(req, resp);
+	}
+	
 }
