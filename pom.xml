@@ -12,6 +12,7 @@
 	<name>workspace parent</name>
 
   <modules>
+    <module>parent</module>
     <module>model</module>
     <module>controller</module>
     <module>view</module>
