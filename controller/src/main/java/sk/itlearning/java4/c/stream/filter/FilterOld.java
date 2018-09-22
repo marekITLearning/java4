@@ -1,14 +1,24 @@
 package sk.itlearning.java4.c.stream.filter;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
-
-import sk.itlearning.java4.b.stream.file.F2;
 
 public class FilterOld {
 
 	public static void main(String[] args) {
 
-		List<String> lines = F2.getBookLines();
+		String relPath = "src/main/resources/sk/itlearning/java4/a/xml/book.xml";
+
+		List<String> lines = new ArrayList<>();
+		
+		try {
+			lines = Files.readAllLines(Paths.get(relPath));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		
 		int count = 0;
 		for (String line : lines) {

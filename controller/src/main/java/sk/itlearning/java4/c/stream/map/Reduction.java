@@ -10,9 +10,7 @@ public class Reduction {
 
 	public static void main(String[] args) {
 		
-		List<Book> list = CatalogLoader.getFullCatagalog().getBook();
-		
-		List<Book> filtered = null;
+		List<Book> list = CatalogLoader.getFullCatagalog(CatalogLoader.class.getResourceAsStream("book.xml")).getBook();
 		
 		Optional<Book> ops = list.stream()
 				.filter(e -> e.getPrice() < 50f)

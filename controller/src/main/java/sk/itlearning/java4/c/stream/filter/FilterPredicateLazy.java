@@ -10,14 +10,12 @@ public class FilterPredicateLazy {
 
 	public static void main(String[] args) {
 
-		String relPath = "src/main/java/sk/itlearning/java4/b/stream/file/book.xml";
+		String relPath = "src/main/resources/sk/itlearning/java4/a/xml/book.xml";
 		
-		try {
-		
+		try {		
 			List<String> lines = Files.lines(Paths.get(relPath)).filter(l -> l.contains("</book>")).collect(Collectors.toList());
 			
 			System.out.println(lines.size());
-		
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

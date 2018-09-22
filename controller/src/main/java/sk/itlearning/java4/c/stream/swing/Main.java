@@ -12,7 +12,7 @@ public class Main {
 	public static void main(String[] args) {
 
 		JFrame f = new JFrame();
-		f.setSize(200, 200);
+		f.setSize(300, 300);
 		f.setVisible(true);
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -20,19 +20,17 @@ public class Main {
 		
 		JPanel jp = new JPanel();
 		jp.add(b);
-		
+
 		f.setContentPane(jp);
 		
+		b.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				b.setText(b.getText() + "X");
+			} }
+		);
 		
-//		b.addActionListener(new ActionListener() {
-//
-//			@Override
-//			public void actionPerformed(ActionEvent e) {
-//				b.setText(b.getText() + "X");
-//			} }
-//		);
-		
-		b.addActionListener(e -> b.setText(b.getText() + e.getID()));
+//		b.addActionListener(e -> b.setText(b.getText() + e.getID()));
 
 	}
 

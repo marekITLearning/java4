@@ -6,47 +6,23 @@ import java.util.stream.Stream;
 
 public class Map {
 
-	public static class Nabytok {
-		private int vyska;
-
-		public int getVyska() {
-			return vyska;
-		}
-
-		public void setVyska(int vyska) {
-			this.vyska = vyska;
-		}
-		
-	}
 	public static void main(String[] args) {
-
-		Nabytok n1 = new Nabytok();
-		n1.setVyska(10);
 		
-		Nabytok n2 = new Nabytok();
-		n2.setVyska(20);
+		// stream retazcov
+		String[] strings = { "a", "b", "c", "d" };
 		
-		Nabytok[] charArr = new Nabytok[]{n1, n2};
+		List<String> lowerA = Arrays.asList(strings);
 		
-		List<Nabytok> listN = Arrays.asList(charArr);
+		lowerA.stream().forEach(s -> System.out.println(s));
 		
-		for (Nabytok p : listN) {
-			p.setVyska(30);
-		}
+		lowerA.forEach(s -> System.out.println(s));
 		
-		for (Nabytok p : listN) {
-			System.out.println(p.vyska);
-		}
+		// stream retazcov inak
+		Stream<String> lowerB = Stream.of("a", "b", "c", "d");
 		
-		Stream<String> lower = Stream.of("a", "b", "c", "d");
+		Stream<String> upper = lowerB.map(s -> s.toUpperCase());
 		
-		Stream<String> upper = lower.map(s -> s.toUpperCase());
-		
-		// Stream<String> upper = lower.map(String::toUpperCase);
-		
-//		upper.forEach(s -> System.out.println(s));
-		
-		upper.forEach(System.out::println);
+		upper.forEach(s -> System.out.println(s));
 	}
 
 }

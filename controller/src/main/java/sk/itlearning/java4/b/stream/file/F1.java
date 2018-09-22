@@ -17,7 +17,7 @@ public class F1 {
 
 	public static List<String> getBookLines() {
 		
-		String relPath = "src/main/java/sk/itlearning/java4/b/stream/file/book.xml";
+		String relPath = "src/main/resources/sk/itlearning/java4/a/xml/book.xml";
 
 		List<String> lines = new ArrayList<>();
 		
