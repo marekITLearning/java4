@@ -11,7 +11,7 @@ public class MainWindow extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
     	FXMLLoader loader = new FXMLLoader();
-    	loader.setLocation(getClass().getResource("/sk/itlearning/java4/gui/main_window.fxml"));
+    	loader.setLocation(getClass().getResource("/sk/itlearning/java4/gui/main_view.fxml"));
         Parent root = loader.load();
         primaryStage.setTitle("Books");
         primaryStage.setScene(new Scene(root, 600, 400));
