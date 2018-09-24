@@ -17,6 +17,7 @@
     <module>controller</module>
     <module>view</module>
     <module>webprj</module>
+    <module>restwebapp</module>
   </modules>
 
 </project>
