@@ -10,10 +10,10 @@
 		<relativePath>../parent</relativePath>
 	</parent>
 
-	<artifactId>webprj</artifactId>
+	<artifactId>webapp_rest</artifactId>
 
 	<packaging>war</packaging>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -27,27 +27,10 @@
 			<version>7.0</version>
 			<scope>provided</scope>
 		</dependency>
-		<dependency>
-			<groupId>commons-io</groupId>
-			<artifactId>commons-io</artifactId>
-			<version>1.3.2</version>
-		</dependency>
 	</dependencies>
 
 	<build>
-		<plugins>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>2.6</version>
-				<configuration>
-					<failOnMissingWebXml>false</failOnMissingWebXml>
-				</configuration>
-			</plugin>
-
-		</plugins>
-		<finalName>appx</finalName>
+		<finalName>restwebapp</finalName>
 	</build>
 
 </project>
