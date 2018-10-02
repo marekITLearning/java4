@@ -5,7 +5,12 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+
+import sk.itlearning.java4.a.abc.LambdaIntro2.Tovar;
 
 public class LambdaIntro2 {
 
@@ -33,6 +38,11 @@ public class LambdaIntro2 {
 		Collections.sort(cisla);
 
 		System.out.println(cisla);
+		
+		Set<Integer> set = new HashSet<>();
+		set.addAll(cisla);
+		
+		System.out.println(set);
 
 		List<Tovar> tovar = new ArrayList<>();
 		tovar.add(new Tovar(LocalDate.of(2016, 2, 11)));
@@ -41,35 +51,20 @@ public class LambdaIntro2 {
 
 		System.out.println(tovar);
 
-		// Collections.sort(tovar);
+//		 Collections.sort(tovar);
 		
 //		Comparator<Tovar> c = new Comparator<>() {
 //			@Override
-//			public int compare(Tovar arg0, Tovar arg1) {
-//				// TODO Auto-generated method stub
-//				return 0;
+//			public int compare(Tovar a, Tovar b) {
+//				return a.datumVyroby.compareTo(b.datumVyroby);
 //			}
 //		};
+//		
+//		Collections.sort(tovar, c);
 
-		Collections.sort(tovar, (a, b) -> a.datumVyroby.compareTo(b.datumVyroby));
+		Collections.sort(tovar, (b, a) -> a.datumVyroby.compareTo(b.datumVyroby));
 		
 		System.out.println(tovar);
-		
-		for (Tovar t : tovar) {
-			if (t.datumVyroby.toEpochDay() < LocalDate.parse("2016-02-11").toEpochDay()) {
-				t.datumVyroby = t.datumVyroby.plusYears(1);
-			}
-			t.datumVyroby.plusYears(1).minusDays(5);
-		}
-		
-		System.out.println(tovar);
-		
-		tovar.stream().filter(t -> t.datumVyroby.toEpochDay() < LocalDate.parse("2017-02-11").toEpochDay()).forEach(t -> t.datumVyroby = t.datumVyroby.plusYears(1));
-		
-		System.out.println(tovar);
-		
-		
-
 	}
 
 }

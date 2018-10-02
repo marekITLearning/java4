@@ -44,6 +44,7 @@ public class MethodReference1 {
 	
 	void testEquals(Stream<Integer> s) {
 		s.filter(i -> this.x.equals(i)).forEach(System.out::println); // convert to method reference
+		s.filter(this.x::equals).forEach(System.out::println);
 	}
 	
 }

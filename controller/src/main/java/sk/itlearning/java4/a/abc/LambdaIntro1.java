@@ -45,10 +45,10 @@ public class LambdaIntro1 extends JFrame {
 		 * Parameter listenera musi byt FUNCTIONAL INTERFACE =
 		 * interface s jedinou nenaimplementovanou metodou
 		 */
-		tlacitko.addActionListener(a -> showDialog());
+		tlacitko.addActionListener(e -> showDialog());
 		
 		// toto nefunguje KeyListener ma viacero metod
-		// t.addKeyListener(a -> showDialog());
+//		 t.addKeyListener(a -> showDialog());
 
 		this.pack();
 		this.setBounds(300, 300, 300, 300);

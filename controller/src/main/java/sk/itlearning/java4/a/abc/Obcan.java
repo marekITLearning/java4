@@ -65,4 +65,17 @@ public class Obcan {
 		return "Zakaznik; typ Obcan; RC = " + rodneCislo + "; Meno = " + meno;
 	}
 	
+	@Override
+	public Obcan clone() {
+		Obcan o = new Obcan(this.rodneCislo, this.meno);
+		o.setKredit(this.getKredit());
+		return o;
+	}
+
+	public static Obcan clone(Obcan o2) {
+		Obcan o = new Obcan(o2.rodneCislo, o2.meno);
+		o.setKredit(o2.getKredit());
+		return o;
+	}
+	
 }

@@ -17,7 +17,7 @@ public class RegexpSearch {
 		String s = "nejakom texte nieco nachadza";
 		s.indexOf("nieco");
 		
-		Pattern p = Pattern.compile("1[0-9]{3}/\\d{6}"); // the expression / pattern - vzor, ktory budeme hladat v texte
+		Pattern p = Pattern.compile("[0-9]{4}/\\d{6}"); // the expression / pattern - vzor, ktory budeme hladat v texte
 
 		String text = "text s telefonnymi cislami, prve (0940/506070) v spravnom tvare, "
 				+ "druhe (1940/506070) v nespravnom tvare (teda sa nenajde podla zadaneho vzoru)";
@@ -37,7 +37,7 @@ public class RegexpSearch {
 		// aj retazce mozme porovnavat voci regularnym vyrazom (patternom)
 
 		System.out.println(); // prazdny riadok do konzoly
-		System.out.println(text.matches(".*0[0-9]{3}/[0-9]{6}.*"));
+		System.out.println(text.matches(".*[0-9]{4}/[0-9]{6}.*"));
 		
 		String mail = "0abcdef@yahoo.com";
 		

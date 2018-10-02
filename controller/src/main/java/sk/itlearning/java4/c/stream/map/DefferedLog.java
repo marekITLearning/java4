@@ -11,6 +11,7 @@ public class DefferedLog {
 		try {
 			throw new Exception();
 		} catch (Exception e) {
+			info("nastala chyba");
 			info(() -> new String("nastala chyba"));
 		}
 	}
@@ -18,6 +19,12 @@ public class DefferedLog {
 	static void info(Supplier<String> s) {
 		if (l <= 1) {
 			System.out.println(s.get());
+		}
+	}
+	
+	static void info(String s) {
+		if (l <= 1) {
+			System.out.println(s);
 		}
 	}
 	

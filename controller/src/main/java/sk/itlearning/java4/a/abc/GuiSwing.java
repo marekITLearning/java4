@@ -25,14 +25,14 @@ public class GuiSwing {
 		
 		frame.setContentPane(panel);
 		
-		button.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				label.setText(label.getText() + "X");
-			}
-		});
+//		button.addActionListener(new ActionListener() {
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				label.setText(label.getText() + "X");
+//			}
+//		});
 		
-		// button.addActionListener(e -> label.setText(label.getText() + "Y"));
+		button.addActionListener(e -> label.setText(label.getText() + "Y"));
 	}
 	
 }

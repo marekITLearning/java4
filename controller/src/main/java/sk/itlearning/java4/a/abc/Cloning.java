@@ -6,14 +6,16 @@ public class Cloning {
 	
 	public static void main(String[] args) {
 	
-		Obcan o = new Obcan("1234", "Jozo");
+		Obcan o = new Obcan("11", "Jozo");
 		o.setKredit(new BigDecimal(100));
 
-		System.out.println(o.getKredit());
+		System.out.println(o);
 
-//		Obcan o2 = o.clone();
-//
-//		Obcan o3 = Obcan.clone(o2);
+		Obcan o2 = o.clone();
+
+		System.out.println(o2);
+		
+		Obcan o3 = Obcan.clone(o2);
 
 		
 	}

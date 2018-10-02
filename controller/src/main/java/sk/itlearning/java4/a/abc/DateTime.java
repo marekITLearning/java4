@@ -34,15 +34,18 @@ public class DateTime {
 
 	public static void main(String[] args) {
 		LocalDate today = LocalDate.now();
+		System.out.println(today);
 		LocalDate payday = today.with(TemporalAdjusters.lastDayOfMonth()).minusDays(2);
+		System.out.println(payday);
 		LocalDate tomorrow = today.plus(1, ChronoUnit.DAYS);
 
 		LocalDateTime today2 = LocalDateTime.now();
 		System.out.println(today2);
-		LocalDateTime yesterday = today2.minus(60*60*24, ChronoUnit.SECONDS);
+		LocalDateTime yesterday = today2.minusDays(1);
 		System.out.println(yesterday);
 
 		LocalDate dateOfBirth = LocalDate.of(2012, Month.MAY, 14);
+		System.out.println(dateOfBirth);
 		LocalDate firstBirthday = dateOfBirth.plusYears(1);
 
 		LocalDateTime db = LocalDateTime.now(ZoneId.of("Europe/Bratislava"));
@@ -61,7 +64,7 @@ public class DateTime {
 		System.out.println(lt);
 		
 		// Konverzia LocalDate alebo LocalDateTime na Date
-		Date d = Date.from(today.atStartOfDay(ZoneId.of("Europe/Bratislava")).toInstant());
+		Date d = Date.from(today.atStartOfDay(ZoneId.systemDefault()).toInstant());
 		
 	}
 

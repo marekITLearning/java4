@@ -13,14 +13,19 @@ public class Reduction {
 		List<Book> list = CatalogLoader.getFullCatagalog(CatalogLoader.class.getResourceAsStream("book.xml")).getBook();
 		
 		Optional<Book> ops = list.stream()
-				.filter(e -> e.getPrice() < 50f)
+				.filter(e -> e.getPrice() < 20f)
 				.max( (a, b) -> Float.valueOf(a.getPrice()).compareTo(Float.valueOf(b.getPrice())));
 		
 		ops.ifPresent(v -> v.setPrice(100));
 		
 		ops.ifPresent(v -> System.out.println(v.getId()));
+		ops.ifPresent(v -> System.out.println(v.getPrice()));
 		
 		Book b = ops.orElse(new Book());
+		
+		ops.ifPresent(v -> System.out.println(v.getPrice()));
+		
+		Book b2 = ops.get();
 		
 	}
 	
