@@ -15,7 +15,7 @@ import javax.ws.rs.core.Response;
 public class Page {
 
 	@GET
-	@Produces(MediaType.APPLICATION_XML)
+	@Produces(MediaType.APPLICATION_JSON)
 	public Response doTest() {
 		JsonObjectBuilder jb = Json.createObjectBuilder();
 		
