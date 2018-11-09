@@ -18,7 +18,6 @@
     <module>webapp_servlet</module>
     <module>webapp_rest</module>
     <module>webapp_servlet2</module>
-    <module>webprj</module>
   </modules>
 
 </project>
