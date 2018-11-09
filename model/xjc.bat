@@ -1,1 +1,1 @@
-C:\devel2\jdk10\bin\xjc.exe src/main/resources/sk/itlearning/java4/book/book.xsd -d src/main/java -p sk.itlearning.java4.book
+C:\devel\jdk10\bin\xjc.exe src/main/resources/sk/itlearning/java4/book/book.xsd -d src/main/java -p sk.itlearning.java4.book

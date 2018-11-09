@@ -1,10 +1,12 @@
 package sk.itlearning.java4.a.xml;
 
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.List;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
 import sk.itlearning.java4.book.Book;
@@ -30,4 +32,15 @@ public class CatalogLoader {
 		}
 	}
 
+	public static void saveCatagalog(Catalog c, OutputStream os) {
+		try {
+			JAXBContext jaxbContext = JAXBContext.newInstance(Catalog.class);
+			Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+			jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+			jaxbMarshaller.marshal(c, os);
+		} catch (JAXBException e) {
+			e.printStackTrace();
+		}
+	}
+	
 }
