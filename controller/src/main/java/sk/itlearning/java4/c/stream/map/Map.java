@@ -20,9 +20,9 @@ public class Map {
 		// stream retazcov inak
 		Stream<String> lowerB = Stream.of("a", "b", "c", "d");
 		
-		Stream<String> upper = lowerB.map(s -> s.toUpperCase());
+		lowerB = lowerB.map(s -> s.toUpperCase());
 		
-		upper.forEach(s -> System.out.println(s));
+		lowerB.forEach(s -> System.out.println(s));
 	}
 
 }
