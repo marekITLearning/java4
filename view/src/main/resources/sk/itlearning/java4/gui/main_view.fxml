@@ -5,7 +5,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="439.0" prefWidth="427.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sk.itlearning.java4.f.javafx.MainController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="439.0" prefWidth="427.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sk.itlearning.java4.controller.MainController">
    <children>
       <Button layoutX="272.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#updateTable" prefHeight="31.0" prefWidth="141.0" text="Load xml data" />
       <TableView layoutX="14.0" layoutY="14.0" prefHeight="418.0" prefWidth="244.0" fx:id="xmlDataTable">
