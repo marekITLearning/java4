@@ -1,1 +1,0 @@
-C:\devel\apache-maven-3.5.4\bin\mvn archetype:generate -DgroupId=sk.itlearning -DartifactId=test -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
