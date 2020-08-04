@@ -21,7 +21,7 @@
 		</dependency>
 		<dependency>
 			<groupId>sk.itlearning.java4</groupId>
-			<artifactId>model</artifactId>
+			<artifactId>book_model</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
