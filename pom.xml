@@ -16,10 +16,9 @@
 		<module>model</module>
 		<module>controller</module>
 		<module>view</module>
-		<module>webapp_servlet</module>
-		<module>webapp_servlet2</module>
-		<module>webapp_rest</module>
 		<module>app_fxgui</module>
+		<module>app_restapi</module>
+		<module>app_webservlet</module>
 	</modules>
 
 </project>
