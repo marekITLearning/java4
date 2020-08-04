@@ -19,7 +19,7 @@
 		<module>webapp_servlet</module>
 		<module>webapp_servlet2</module>
 		<module>webapp_rest</module>
-		<module>fxgui</module>
+		<module>app_fxgui</module>
 	</modules>
 
 </project>
