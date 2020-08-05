@@ -20,6 +20,7 @@
 		<module>app_webservlet</module>
 		<module>book_controller</module>
 		<module>book_model</module>
+		<module>java_topics</module>
 	</modules>
 
 </project>

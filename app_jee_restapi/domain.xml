@@ -17,7 +17,7 @@
 
 	<jdbc-resource pool-name="PostgresPool" object-type="system-all" jndi-name="jdbc/appdb"></jdbc-resource>
     <jdbc-connection-pool is-isolation-level-guaranteed="false" datasource-classname="org.postgresql.ds.PGPoolingDataSource" name="PostgresPool" res-type="javax.sql.ConnectionPoolDataSource">
-      <property name="URL" value="jdbc:postgresql://localhost:5432/customer?useUnicode=true;characterEncoding=utf-8"></property>
+      <property name="URL" value="jdbc:postgresql://localhost:5432/imdb?useUnicode=true;characterEncoding=utf-8"></property>
 	  <property name="user" value="postgres"></property>
 	  <property name="password" value="sa"></property>
     </jdbc-connection-pool>
