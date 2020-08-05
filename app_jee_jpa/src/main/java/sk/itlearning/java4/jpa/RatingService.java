@@ -97,4 +97,32 @@ public class RatingService {
 //		return zeroRecord;
 //	}
 	
+//	@SuppressWarnings("unchecked")
+//	public List<String> getManualPeps() {
+//		Query query = em.createNativeQuery(
+//				"select subject from (select json_array_elements(data::json -> 'participants') -> 'formData' ->> 'subject' as subject, "
+//						+ "json_array_elements(json_array_elements(data::json -> 'participants') -> 'investigations') -> 'result' ->> 'selectedAsPEP' as pepflag from amloecase group by subject, pepflag) as sub where pepflag = 'true'");
+//		query.setHint(QueryHints.ALLOW_NATIVE_SQL_QUERY, true);
+//		return query.getResultList();
+//	}
+
+//	public List<CaseStatistics> getCaseStatistics() {
+//		CriteriaBuilder cb = em.getCriteriaBuilder();
+//		CriteriaQuery<Tuple> query = cb.createTupleQuery();
+//		Root<AmloeCase> root = query.from(AmloeCase.class);
+//		Expression<Integer> user = root.get("userName");
+//		Expression<String> status = root.get("caseStatus");
+//		Expression<Long> count = cb.count(status);
+//		query.multiselect(user.alias("user"), status.alias("status"), count.alias("count"));
+//		query.groupBy(user, status);
+//		query.orderBy(cb.asc(user), cb.asc(status));
+//		TypedQuery<Tuple> tq = em.createQuery(query);
+//		List<CaseStatistics> csList = new ArrayList<>();
+//		for (Tuple t : tq.getResultList()) {
+//			CaseStatistics cs = new CaseStatistics((String) t.get(0), (String) t.get(1), (long) t.get(2));
+//			csList.add(cs);
+//		}
+//		return csList;
+//	}
+	
 }

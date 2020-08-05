@@ -6,8 +6,8 @@
 
 	<persistence-unit name="APP_DB" transaction-type="JTA">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-		<jta-data-source>java:app/appdb</jta-data-source>
-		<class>sk.digitalsystems.banks.amloe.db.pgsql.entity.AmloeCase</class>
+		<jta-data-source>jdbc/appdb</jta-data-source>
+		<class>sk.itlearning.java4.jpa.Rating</class>
 	</persistence-unit>
 
 </persistence>
