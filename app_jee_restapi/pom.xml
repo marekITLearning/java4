@@ -10,7 +10,7 @@
 		<relativePath>../parent</relativePath>
 	</parent>
 
-	<artifactId>app_restapi</artifactId>
+	<artifactId>app_jee_restapi</artifactId>
 
 	<packaging>war</packaging>
 
