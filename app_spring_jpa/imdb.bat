@@ -8,7 +8,7 @@ create table rating
 
 import title and rating data from tsv files
 
-"C:/Program Files/PostgreSQL/10/bin/psql" -d imdb -U postgres
+"C:/devel/postgres/bin/psql" -d imdb -U postgres
 \copy rating(tconst, averageRating, numVotes) FROM 'C:/devel/rating.tsv' DELIMITER E'\t' CSV ENCODING 'UTF8' HEADER
 \copy title(tconst, titleType, primaryTitle, originalTitle, isAdult, startYear, endYear, runtimeMinutes, genres) FROM 'C:/devel/title.tsv' DELIMITER E'\t' CSV ENCODING 'UTF8' HEADER NULL '\N' QUOTE E'\b'
 

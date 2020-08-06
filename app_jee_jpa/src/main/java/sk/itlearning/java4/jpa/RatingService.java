@@ -1,13 +1,19 @@
 package sk.itlearning.java4.jpa;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateful;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
+
+import org.eclipse.persistence.config.CacheUsage;
+import org.eclipse.persistence.config.QueryHints;
 
 @Stateful
 public class RatingService {
@@ -18,7 +24,7 @@ public class RatingService {
 	public Rating find(String id) {
 		return em.find(Rating.class, id);
 	}
-	
+
 	public void create(Rating entity) {
 		em.persist(entity);
 		em.flush();
@@ -29,10 +35,22 @@ public class RatingService {
 		CriteriaBuilder cb = em.getCriteriaBuilder();
 		CriteriaQuery<Rating> q = cb.createQuery(Rating.class);
 		Root<Rating> root = q.from(Rating.class);
+		List<Predicate> conditions = new ArrayList<>();
+		conditions.add(
+				cb.and(cb.greaterThan(root.get("averagerating"), 10.0f), cb.greaterThan(root.get("numvotes"), 100)));
 		q.select(root);
 		return em.createQuery(q).getResultList();
 	}
-	
+
+	@SuppressWarnings("unchecked")
+	public List<Rating> getTop(float averagerating) {
+		em.clear();
+		Query query = em.createQuery("SELECT r, t FROM Rating r, Title t WHERE r.tconst = t.tconst and r.averagerating > :averagerating and t.startyear >= 2000 and r.numvotes > 100");
+		query.setParameter("averagerating", averagerating);
+		query.setHint(QueryHints.CACHE_USAGE, CacheUsage.NoCache);
+		return query.getResultList();
+	}
+
 	public void update(Rating customer) {
 		if (!em.contains((Rating) customer)) {
 			em.merge((Rating) customer);
@@ -54,7 +72,7 @@ public class RatingService {
 //		query.setHint(QueryHints.CACHE_USAGE, CacheUsage.NoCache);
 //		return query.getResultList();
 //	}
-	
+
 //	public List<Rating> read(String nameSubstring) {
 //		CriteriaBuilder cb = em.getCriteriaBuilder();
 //		CriteriaQuery<Rating> q = cb.createQuery(Rating.class);
@@ -73,7 +91,7 @@ public class RatingService {
 //		List<Rating> result = em.createQuery(q).getResultList();
 //		return result;
 //	}
-	
+
 //	public List<Orsr> getOrsrByExid(Integer exid) {
 //		Query query = em.createQuery("SELECT c FROM Orsr c WHERE c.exid = :exid");
 //		query.setParameter("exid", exid);
@@ -96,7 +114,7 @@ public class RatingService {
 //		em.refresh(zeroRecord);
 //		return zeroRecord;
 //	}
-	
+
 //	@SuppressWarnings("unchecked")
 //	public List<String> getManualPeps() {
 //		Query query = em.createNativeQuery(
@@ -124,5 +142,5 @@ public class RatingService {
 //		}
 //		return csList;
 //	}
-	
+
 }

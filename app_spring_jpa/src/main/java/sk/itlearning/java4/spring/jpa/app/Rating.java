@@ -1,9 +1,7 @@
-package sk.itlearning.java4.jpa;
+package sk.itlearning.java4.spring.jpa.app;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -12,17 +10,11 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "rating", schema = "public")
 public class Rating {
-
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Integer id;
-	
 	private String tconst;
-	private Float averagerating;
-	private Integer numvotes;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "tconst", referencedColumnName = "tconst", insertable=false, updatable=false)	
+	@JoinColumn(name = "tconst", referencedColumnName = "tconst")
 	private Title title;
 
 	public String getTconst() {
@@ -57,4 +49,6 @@ public class Rating {
 		this.title = title;
 	}
 
+	private Float averagerating;
+	private Integer numvotes;
 }
