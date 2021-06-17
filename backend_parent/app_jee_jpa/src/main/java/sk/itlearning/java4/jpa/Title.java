@@ -10,6 +10,7 @@ public class Title {
 
 	@Id
 	private String tconst;
+	
 	private String primarytitle;
 	private Integer startyear;
 	

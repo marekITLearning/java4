@@ -14,8 +14,11 @@ public class Main extends Application {
     public void start(Stage stage) {
     	
     	FXMLLoader loader = new FXMLLoader();
+    	
     	loader.setLocation(getClass().getResource("main.fxml"));
+    	
         Parent root;
+        
 		try {
 			root = loader.load();
 	        stage.setTitle("Delete Tool");

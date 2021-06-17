@@ -15,7 +15,7 @@ public class Rating {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Integer id;
+	private long id;
 	
 	private String tconst;
 	private Float averagerating;
@@ -55,6 +55,14 @@ public class Rating {
 
 	public void setTitle(Title title) {
 		this.title = title;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 
 }
