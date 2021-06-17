@@ -26,11 +26,15 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-	
+
 	<modules>
 		<module>book_controller</module>
 		<module>book_model</module>
 		<module>java_topics</module>
+		<module>app_fxgui</module>
+		<module>app_jee_jaxrs</module>
+		<module>app_jee_jpa</module>
+		<module>app_jee_servlet</module>
 	</modules>
 
 </project>
