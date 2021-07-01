@@ -18,6 +18,7 @@ public class DateTime {
 	// The Date-Time API uses the calendar system defined in ISO-8601 as the default
 	// calendar.
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 
 		LocalDate today = LocalDate.now();
