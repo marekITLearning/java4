@@ -1,33 +1,26 @@
 package webservice;
 
-import java.io.IOException;
-import java.io.InputStream;
+import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
+import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
-import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 
-import sk.itlearning.java4.a.xml.CatalogLoader;
-import sk.itlearning.java4.book.Catalog;
+import sk.itlearning.java5.webservicejpa.Zakaznik;
+import sk.itlearning.java5.webservicejpa.ZakaznikService;
 
 @Path("catalog")
 public class CatalogApi {
 
-	@Context
-	private HttpServletRequest request;
+	@Inject
+	private ZakaznikService zs;
 
 	@GET
-	@Produces(MediaType.APPLICATION_XML)
-	public Catalog getCatalog() {
-		try (InputStream is = CatalogApi.class.getResourceAsStream("../../../book.xml")) {
-			return CatalogLoader.getFullCatagalog(is);
-		} catch (IOException e) {
-			e.printStackTrace();
-			return null;
-		}
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Zakaznik> getCatalog() {
+		return zs.getAll();
 	}
 
 }

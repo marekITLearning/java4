@@ -7,9 +7,7 @@
 		<version>1.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>webservice</artifactId>
-
-	<packaging>war</packaging>
+	<artifactId>webservice_jpa</artifactId>
 
 	<dependencies>
 		<dependency>
@@ -19,25 +17,16 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>sk.itlearning.java4</groupId>
-			<artifactId>webservice_jpa</artifactId>
-			<version>1.0-SNAPSHOT</version>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.3.4</version>
 		</dependency>
 		<dependency>
-			<groupId>fish.payara.extras</groupId>
-			<artifactId>payara-micro</artifactId>
-			<version>5.2021.2</version>
+			<groupId>org.eclipse.persistence</groupId>
+			<artifactId>eclipselink</artifactId>
+			<version>3.1.0-M1</version>
 		</dependency>
+		
 	</dependencies>
 
-	<build>
-		<finalName>webapp</finalName>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>3.2.2</version>
-			</plugin>
-		</plugins>
-	</build>
 </project>
