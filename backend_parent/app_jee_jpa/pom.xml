@@ -12,7 +12,7 @@
 	<artifactId>app_jee_jpa</artifactId>
 
 	<properties>
-		<postgresql.driver.version>42.2.5</postgresql.driver.version>
+		<postgresql.driver.version>42.4.1</postgresql.driver.version>
 		<eclipselink.version>2.7.3</eclipselink.version>
 		<jdbcUrlRoot>jdbc:postgresql://localhost:5432/</jdbcUrlRoot>
 		<jdbcDriver>org.postgresql.Driver</jdbcDriver>
