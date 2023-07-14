@@ -1,1 +1,0 @@
-C:\devel\apache-maven-3.9.0\bin\mvn clean install && pause
