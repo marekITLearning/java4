@@ -1,5 +1,8 @@
 package sk.itlearning.java4.a.xml;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.List;
 
@@ -8,9 +11,11 @@ import sk.itlearning.java4.catalog.model.Book;
 
 public class BookCatalogTest {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 
-		InputStream is = BookCatalogTest.class.getResourceAsStream("book.xml");
+		String cesta = System.getProperty("xmlPath");
+
+		InputStream is = new FileInputStream(new File(cesta));
 
 		List<Book> list = CatalogLoader.getFullCatagalog(is).getBook();
 
