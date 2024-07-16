@@ -13,21 +13,8 @@
 		<maven.compiler.target>17</maven.compiler.target>
 	</properties>
 
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.glassfish.jaxb</groupId>
-				<artifactId>jaxb-bom</artifactId>
-				<version>2.4.0-b180830.0438</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
 
 	<modules>
-		<module>app_fxgui</module>
-		<module>app_jee_jaxrs</module>
 		<module>app_swing_weather</module>
 		<module>java_topics</module>
 		<module>xsd_book_catalog</module>

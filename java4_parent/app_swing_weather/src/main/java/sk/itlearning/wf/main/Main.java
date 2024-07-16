@@ -12,7 +12,6 @@ import java.util.stream.Collectors;
 
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
-import javax.xml.bind.JAXBElement;
 import javax.xml.datatype.XMLGregorianCalendar;
 
 import org.jfree.chart.ChartFactory;
@@ -23,6 +22,7 @@ import org.jfree.data.time.TimeSeries;
 import org.jfree.data.time.TimeSeriesCollection;
 import org.jfree.data.xy.XYDataset;
 
+import jakarta.xml.bind.JAXBElement;
 import sk.itlearning.wf.rest.client.WeatherDataRestClient;
 import sk.itlearning.wf.xml.LocationType;
 import sk.itlearning.wf.xml.Temperature;
@@ -40,13 +40,10 @@ public class Main {
 		gui.setBounds(50, 50, 600, 500);
 
 		XYDataset dataset = createDataSet();
-		
-	    JFreeChart chart = ChartFactory.createTimeSeriesChart(
-	            "Temperature Forecast - Bratislava Kominarska",
-	            "Datetime",
-	            "Temperature",
-	            dataset);
-	    
+
+		JFreeChart chart = ChartFactory.createTimeSeriesChart("Temperature Forecast - Bratislava Kominarska",
+				"Datetime", "Temperature", dataset);
+
 		ChartPanel chartPanel = new ChartPanel(chart);
 
 		gui.setContentPane(chartPanel);
@@ -59,12 +56,12 @@ public class Main {
 	private static XYDataset createDataSet() {
 		TimeSeriesCollection dataset = new TimeSeriesCollection();
 		TimeSeries series = new TimeSeries("Datetime");
-		
+
 		getTemperatureData().forEach((k, v) -> {
 			Hour hour = new Hour(Date.from(k.toInstant(ZoneOffset.UTC)));
 			series.add(hour, v);
 		});
-		
+
 		dataset.addSeries(series);
 
 		return dataset;
@@ -116,11 +113,11 @@ public class Main {
 	}
 
 	/**
-	 * Convert XML date time to LocalDateTime instance  
+	 * Convert XML date time to LocalDateTime instance
 	 */
 	private static LocalDateTime toLocalDateTime(XMLGregorianCalendar xmlDate) {
 		Date date = xmlDate.toGregorianCalendar().getTime();
 		return LocalDateTime.ofInstant(date.toInstant(), ZoneOffset.UTC);
 	}
-	
+
 }

@@ -1,1 +1,1 @@
-C:/devel/jdk-17.0.7/bin/java.exe -jar target\app_swing_weather-1.0-SNAPSHOT-jar-with-dependencies.jar
+C:/devel/jdk-17.0.12/bin/java.exe -Dcom.sun.xml.bind.v2.bytecode.ClassTailor.noOptimize=true -jar target\app_swing_weather-1.0-SNAPSHOT-jar-with-dependencies.jar
