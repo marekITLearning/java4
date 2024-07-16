@@ -1,0 +1,1 @@
+Napiste aplikaciu (triedu s main metodou), v ktorej nacitate data z API (web servisu), ktoreho dokumentaciu najdete na adrese https://open-meteo.com/en/docs
