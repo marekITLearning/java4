@@ -1,0 +1,1 @@
+C:\devel\jdk-21.0.4\bin\java -cp target\classes sk.itlearning.java4.App

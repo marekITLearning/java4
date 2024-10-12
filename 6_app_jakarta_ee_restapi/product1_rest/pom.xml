@@ -1,0 +1,53 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>sk.itlearning.java4</groupId>
+		<artifactId>6_app_jakarta_ee_restapi</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>product1_rest</artifactId>
+
+	<packaging>war</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>jakarta.platform</groupId>
+			<artifactId>jakarta.jakartaee-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>fish.payara.extras</groupId>
+			<artifactId>payara-micro</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>sk.itlearning.java4</groupId>
+			<artifactId>product1_model</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>sk.itlearning.java4</groupId>
+			<artifactId>product1_conf</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>sk.itlearning.java4</groupId>
+			<artifactId>product1_biz</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>sk.itlearning.java4</groupId>
+			<artifactId>product1_pers</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>restapp</finalName>
+	</build>
+
+</project>

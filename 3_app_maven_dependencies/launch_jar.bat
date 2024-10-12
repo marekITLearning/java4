@@ -1,0 +1,1 @@
+C:\devel\jdk-21.0.4\bin\java -jar target/2_elementary_java_app_maven-1.0-SNAPSHOT.jar

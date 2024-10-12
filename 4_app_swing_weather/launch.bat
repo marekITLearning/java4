@@ -1,0 +1,1 @@
+C:\devel\jdk-21.0.4\bin\java -jar target\4_app_swing_weather-1.0-SNAPSHOT-jar-with-dependencies.jar

@@ -1,1 +1,0 @@
-C:/devel/jdk-17.0.12/bin/java.exe -jar target\app_swing_weather-1.0-SNAPSHOT-jar-with-dependencies.jar
