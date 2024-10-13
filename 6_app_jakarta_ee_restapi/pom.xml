@@ -17,8 +17,6 @@
 
 	<modules>
 		<module>product1_model</module>
-		<module>product1_conf</module>
-		<module>product1_biz</module>
 		<module>product1_pers</module>
 		<module>product1_rest</module>
 	</modules>

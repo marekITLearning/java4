@@ -1,10 +1,7 @@
 package sk.itlearning.java5.pers.entity;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
 
 @Entity
 public class Rating {
@@ -15,10 +12,6 @@ public class Rating {
 	private Float averagerating;
 
 	private Integer numvotes;
-
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "tconst", referencedColumnName = "tconst", insertable = false, updatable = false)
-	private Title title;
 
 	public String getTconst() {
 		return tconst;
@@ -42,14 +35,6 @@ public class Rating {
 
 	public void setNumvotes(Integer numvotes) {
 		this.numvotes = numvotes;
-	}
-
-	public Title getTitle() {
-		return title;
-	}
-
-	public void setTitle(Title title) {
-		this.title = title;
 	}
 
 }

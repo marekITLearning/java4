@@ -17,9 +17,7 @@ public class ExceptionMapperProvider implements ExceptionMapper<Throwable> {
 			return ErrorResponse.build(ErrorCodes.BadDataOrArguments, exception.getLocalizedMessage());
 		}
 
-		exception.printStackTrace();
-
-		return ErrorResponse.build(ErrorCodes.BackendServerError, "Unknown error");
+		return ErrorResponse.build(ErrorCodes.BackendServerError, exception.getLocalizedMessage());
 	}
 
 }

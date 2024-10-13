@@ -60,7 +60,7 @@ public class TitleService {
 				.getResultList();
 		return list;
 	}
-	
+
 	public void deleteMovie(String primaryKey) {
 		Title movie = em.find(Title.class, primaryKey);
 		em.remove(movie);
